@@ -1,0 +1,39 @@
+/**
+\mainpage General idea of the design.
+
+This represents a partial implementation for the starting code of
+Assignment 4, and thus it is also a partial solution to Assignment 2. 
+To complete, you need to add Circle and Square shapes to the
+project and define the code in main() so that to create shapes as per
+the requirements for Assignment 2.
+
+The code for animation, for updating positions and for bouncing off
+the window margin is located in class Shape. The function responsible for
+position update and collision is Shape::updatePosition. The function
+relies on knowing the actual bounding box of the shape being
+drawn. The bBox virtual functions must be implemented by every
+concrete shape, so that the shape bounces correctly. The bounding box
+is defined relative to the origin point, with coordinates given in
+pixels. Teh bounding box should not be returned in absolute pixel
+coordinates. 
+
+Notice also that Shape::updatePosition receives the coordinates of the
+rectangular reagion inside which the shapes must bounce; this gives a
+bit more flexibility. It wouln't be difficult to split the shapes into
+separate groups bouncing inside different invisible windows.
+
+Class ShapeSimulator inherits from Simulator
+and contains a list of Shape pointers. 
+
+To add Circle and Square objects, create classes that inherit from
+Shape. Define constructors with at least one origin point and one
+speed vector measured in pixels per second. These must be passed to
+the constructor Shape::Shape. You should provide additional arguments
+as appropriate, for example side length and radius,
+respectively. Notice that the default constructor for Shape children
+cannot be used since Shape::Shape() is private. You also must provide
+definitions for the bounding box functions, but for Square and Circle
+these functions are very simple.
+
+Good luck!
+*/
